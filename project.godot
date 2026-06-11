@@ -38,10 +38,6 @@ window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 
-[editor]
-
-version_control_autoload_on_startup=true
-
 [importer_defaults]
 
 texture={

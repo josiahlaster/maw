@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-onready var btn_left  = $HBoxContainer/BtnLeft
-onready var btn_right = $HBoxContainer/BtnRight
-onready var btn_jump  = $BtnJump
+onready var btn_left  = $Root/HBoxContainer/BtnLeft
+onready var btn_right = $Root/HBoxContainer/BtnRight
+onready var btn_jump  = $Root/BtnJump
 
 func _ready():
 	# has_touchscreen_ui_hint() is unreliable on iOS in Godot 3.5.

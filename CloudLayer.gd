@@ -1,6 +1,6 @@
 extends ParallaxLayer
 
-export(float) var CLOUD_SPEED = -15
+export(float) var CLOUD_SPEED = -15.0
 
 func _process(delta):
 	motion_offset.x += CLOUD_SPEED * delta

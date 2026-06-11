@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/4c3b6af0-ac8d-4be5-b535-4748e0bad1d6.png-042332a5607f008742464c278b5841e1.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://wepons/spr_shooting_splat/4c3b6af0-ac8d-4be5-b535-4748e0bad1d6.png"
+dest_files=[ "res://.import/4c3b6af0-ac8d-4be5-b535-4748e0bad1d6.png-042332a5607f008742464c278b5841e1.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

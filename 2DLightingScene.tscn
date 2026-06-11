@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://parallax/parallax-00.png" type="Texture" id=1]
 [ext_resource path="res://map/groundTilemap_64px.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://parallax/parallax-04.png" type="Texture" id=7]
 [ext_resource path="res://CloudLayer.gd" type="Script" id=8]
+[ext_resource path="res://ui/MobileControls.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -490,3 +491,5 @@ motion_mirroring = Vector2( 1440, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground2/Layer04"]
 position = Vector2( 0, 80 )
 texture = ExtResource( 7 )
+
+[node name="MobileControls" parent="." instance=ExtResource( 9 )]
