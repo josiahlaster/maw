@@ -15,11 +15,11 @@ const KNOB_ACTIVE  = Color(0.45, 0.85, 1.0, 0.90)
 onready var draw_node : Control = $JoystickDraw
 
 # ── State ─────────────────────────────────────────────────────────────────────
-var _touch_idx  := -1
-var _base       := Vector2.ZERO   # screen-space base centre
-var _knob       := Vector2.ZERO   # screen-space knob centre
-var _is_active  := false
-var _was_up     := false          # rising-edge jump detection
+var _touch_idx  = -1
+var _base       = Vector2.ZERO   # screen-space base centre
+var _knob       = Vector2.ZERO   # screen-space knob centre
+var _is_active  = false
+var _was_up     = false          # rising-edge jump detection
 
 func _ready():
 	visible = (OS.get_name() == "iOS" or OS.get_name() == "Android")
