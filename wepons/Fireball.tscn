@@ -1,0 +1,33 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://wepons/Fireball.gd" type="Script" id=1]
+[ext_resource path="res://wepons/spr_shooting/692db9a0-cf86-45b1-811a-4662301de2be.png" type="Texture" id=2]
+[ext_resource path="res://wepons/spr_shooting/b1ae6a2b-9cab-4378-b345-36a7b91c806f.png" type="Texture" id=3]
+[ext_resource path="res://wepons/spr_shooting/b2b01cdc-0ee7-4147-b0fd-b52f12fc7c88.png" type="Texture" id=4]
+[ext_resource path="res://wepons/spr_shooting/b62ebf2d-9f1d-4204-ae0d-eb5a7ad64c2a.png" type="Texture" id=5]
+[ext_resource path="res://wepons/spr_shooting/c24bf3b3-7eda-447e-9b72-b07b001131bd.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "fly",
+"speed": 12.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 8.0
+
+[node name="Fireball" type="Area2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "fly"
+playing = true
+centered = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
