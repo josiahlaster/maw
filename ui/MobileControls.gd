@@ -5,8 +5,11 @@ onready var btn_right = $HBoxContainer/BtnRight
 onready var btn_jump  = $BtnJump
 
 func _ready():
-	# Show only on touch-capable devices (hidden on desktop; kb/gamepad still work)
-	visible = OS.has_touchscreen_ui_hint()
+	# has_touchscreen_ui_hint() is unreliable on iOS in Godot 3.5.
+	# Check OS name directly instead. Always visible on iOS/Android,
+	# hidden on desktop so keyboard/gamepad users aren't affected.
+	var os_name = OS.get_name()
+	visible = (os_name == "iOS" or os_name == "Android")
 
 	btn_left.connect("button_down",  self, "_on_left_down")
 	btn_left.connect("button_up",    self, "_on_left_up")
