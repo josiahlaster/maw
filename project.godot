@@ -24,6 +24,10 @@ config/name="MagicAndWoodsVita"
 run/main_scene="res://2DLightingScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+MobileInput="*res://ui/MobileInput.gd"
+
 [display]
 
 window/size/width=492
@@ -33,6 +37,10 @@ window/size/test_height=1080
 window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
+
+[editor]
+
+version_control_autoload_on_startup=true
 
 [importer_defaults]
 

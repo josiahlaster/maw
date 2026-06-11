@@ -31,18 +31,22 @@ func _ready():
 	print("Connected Joypads: ", Input.get_connected_joypads())
 
 func _physics_process(delta):
-	# Jump via button press or stick up
-	if (Input.is_action_pressed("jump") or Input.get_joy_axis(0, JOY_AXIS_1) < -0.7) and state != JUMP:
+	# Gather jump intent: keyboard, gamepad stick up, OR mobile jump button
+	var want_jump = Input.is_action_pressed("jump") \
+		or Input.get_joy_axis(0, JOY_AXIS_1) < -0.7 \
+		or MobileInput.jump
+
+	if want_jump and state != JUMP:
 		state = JUMP
 		jumping = true
 		jump_timer.start()
 
 	match state:
-		MOVE:	
+		MOVE:
 			move_state(delta)
-		JUMP:	
+		JUMP:
 			jump_state(delta)
-	
+
 	velocity.y += GRAVITY * delta
 	velocity = move_and_slide(velocity, UP)
 
@@ -59,13 +63,19 @@ func move_state(delta):
 
 	var input_vector = Vector2.ZERO
 
-	# Try analog input first
+	# 1) Analog stick
 	var analog_x = Input.get_joy_axis(0, JOY_AXIS_0)
 	if abs(analog_x) > DEADZONE:
 		input_vector.x = analog_x
 	else:
-		# Fallback to D-pad (digital buttons mapped in Input Map)
+		# 2) Keyboard / D-pad
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+
+	# 3) Mobile touch buttons (override if pressed)
+	if MobileInput.move_right:
+		input_vector.x = 1.0
+	elif MobileInput.move_left:
+		input_vector.x = -1.0
 
 	input_vector = input_vector.normalized()
 
