@@ -1,6 +1,8 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=2]
+[ext_resource path="res://wepons/ShootingController.gd" type="Script" id=3]
+[ext_resource path="res://wepons/AimLine.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.64408, 1.59907 )
@@ -224,3 +226,11 @@ wait_time = 0.2
 one_shot = true
 
 [connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
+
+[node name="ShootingController" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="AimLine" type="Node2D" parent="ShootingController"]
+position = Vector2( 2.0, -13.0 )
+script = ExtResource( 4 )
+z_index = 10
